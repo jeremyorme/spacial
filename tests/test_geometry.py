@@ -161,6 +161,11 @@ class RectangleTests(unittest.TestCase):
         self.assertTrue(r_mul.bottom_right.equals(r.bottom_right / factor, tolerance))
         self.assertTrue(r_mul.top_left.equals(r.top_left / factor, tolerance))
 
+    def test_equals(self):
+        r1 = Rectangle(Vector(-2.0, -1.0), Vector(2.0, 3.0))
+        r2 = Rectangle(Vector(-2.0, -1.0), Vector(2.0, 3.0))
+        self.assertTrue(r1.equals(r2, tolerance))
+
     def test_contains(self):
         bl = Vector(-2.0, -3.0)
         tr = Vector(1.0, 4.0)

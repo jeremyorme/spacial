@@ -96,6 +96,10 @@ class Rectangle:
     def __truediv__(self, factor: float):
         return Rectangle(self.bottom_left / factor, self.top_right / factor)
 
+    def equals(self, other: 'Rectangle', tolerance: float):
+        return (self.bottom_left.equals(other.bottom_left, tolerance) and
+                self.top_right.equals(other.top_right, tolerance))
+
     # centre point of the rectangle
     def centre(self):
         return Vector((self.bottom_left.x + self.top_right.x) / 2.0,
